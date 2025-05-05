@@ -20,6 +20,16 @@
 		C5C249022DC8DCEC00F0A94C /* track4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FD2DC8DCEC00F0A94C /* track4.wav */; };
 		C5C249032DC8DCEC00F0A94C /* track2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FB2DC8DCEC00F0A94C /* track2.wav */; };
 		C5C249042DC8DCEC00F0A94C /* track3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FC2DC8DCEC00F0A94C /* track3.wav */; };
+		C5E57A812DC8FD55008C08D2 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = C5E57A802DC8FD55008C08D2 /* Auth */; };
+		C5E57A832DC8FD55008C08D2 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = C5E57A822DC8FD55008C08D2 /* Functions */; };
+		C5E57A852DC8FD55008C08D2 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = C5E57A842DC8FD55008C08D2 /* PostgREST */; };
+		C5E57A872DC8FD55008C08D2 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = C5E57A862DC8FD55008C08D2 /* Realtime */; };
+		C5E57A892DC8FD55008C08D2 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = C5E57A882DC8FD55008C08D2 /* Storage */; };
+		C5E57A912DC8FE15008C08D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E57A902DC8FE15008C08D2 /* User.swift */; };
+		C5E57A932DC8FE36008C08D2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E57A922DC8FE36008C08D2 /* AuthView.swift */; };
+		C5E57A962DC8FE5D008C08D2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E57A952DC8FE5D008C08D2 /* LoginView.swift */; };
+		C5E57A982DC8FE6A008C08D2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E57A972DC8FE6A008C08D2 /* SignupView.swift */; };
+		C5E57A9B2DC8FE8D008C08D2 /* SupabaseConfig .swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E57A9A2DC8FE8D008C08D2 /* SupabaseConfig .swift */; };
 		C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */; };
 		C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E993102CE3C6CA00C28D36 /* ContentView.swift */; };
 		C5E993132CE3C6CC00C28D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E993122CE3C6CC00C28D36 /* Assets.xcassets */; };
@@ -79,6 +89,12 @@
 		C5C249072DC8DD0C00F0A94C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C5C249082DC8DD0C00F0A94C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		C5C249092DC8DD0C00F0A94C /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		C5E57A8E2DC8FDD9008C08D2 /* AuthManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthManager .swift"; sourceTree = "<group>"; };
+		C5E57A902DC8FE15008C08D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C5E57A922DC8FE36008C08D2 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C5E57A952DC8FE5D008C08D2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C5E57A972DC8FE6A008C08D2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		C5E57A9A2DC8FE8D008C08D2 /* SupabaseConfig .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupabaseConfig .swift"; sourceTree = "<group>"; };
 		C5E9930B2CE3C6CA00C28D36 /* RFID_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFID_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFID_iosApp.swift; sourceTree = "<group>"; };
 		C5E993102CE3C6CA00C28D36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +115,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E57A892DC8FD55008C08D2 /* Storage in Frameworks */,
+				C5E57A852DC8FD55008C08D2 /* PostgREST in Frameworks */,
+				C5E57A832DC8FD55008C08D2 /* Functions in Frameworks */,
+				C5E57A812DC8FD55008C08D2 /* Auth in Frameworks */,
+				C5E57A872DC8FD55008C08D2 /* Realtime in Frameworks */,
 				C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +165,87 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C5E57A8A2DC8FD74008C08D2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C5E57A9F2DC9006A008C08D2 /* Root */,
+				C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */,
+				C5C248C92DC7939000F0A94C /* AppDependencies.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C5E57A8B2DC8FD8A008C08D2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C5E57A942DC8FE3C008C08D2 /* Views */,
+				C5E57A8F2DC8FDFA008C08D2 /* Models  */,
+				C5E57A8E2DC8FDD9008C08D2 /* AuthManager .swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C5E57A8F2DC8FDFA008C08D2 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+				C5E57A902DC8FE15008C08D2 /* User.swift */,
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		C5E57A942DC8FE3C008C08D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5E57A922DC8FE36008C08D2 /* AuthView.swift */,
+				C5E57A952DC8FE5D008C08D2 /* LoginView.swift */,
+				C5E57A972DC8FE6A008C08D2 /* SignupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5E57A992DC8FE78008C08D2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C5E57A9A2DC8FE8D008C08D2 /* SupabaseConfig .swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C5E57A9C2DC8FE9B008C08D2 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		C5E57A9D2DC8FEAD008C08D2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
+				C5C248D82DC7D43400F0A94C /* SettingView.swift */,
+				C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		C5E57A9E2DC8FEDE008C08D2 /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */,
+				C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */,
+			);
+			path = Compare;
+			sourceTree = "<group>";
+		};
+		C5E57A9F2DC9006A008C08D2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				C5E993102CE3C6CA00C28D36 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		C5E993022CE3C6CA00C28D36 = {
 			isa = PBXGroup;
 			children = (
@@ -169,16 +271,13 @@
 		C5E9930D2CE3C6CA00C28D36 /* RFID_ios */ = {
 			isa = PBXGroup;
 			children = (
+				C5E57A9E2DC8FEDE008C08D2 /* Compare */,
+				C5E57A9D2DC8FEAD008C08D2 /* Setting */,
+				C5E57A9C2DC8FE9B008C08D2 /* Scanner */,
+				C5E57A992DC8FE78008C08D2 /* Config */,
+				C5E57A8B2DC8FD8A008C08D2 /* Auth */,
+				C5E57A8A2DC8FD74008C08D2 /* App */,
 				C5E9933D2CE3C87600C28D36 /* RFID-ios-Info.plist */,
-				C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */,
-				C5C248C92DC7939000F0A94C /* AppDependencies.swift */,
-				C5E993102CE3C6CA00C28D36 /* ContentView.swift */,
-				C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */,
-				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
-				C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */,
-				C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */,
-				C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */,
-				C5C248D82DC7D43400F0A94C /* SettingView.swift */,
 				C5C2490A2DC8DD0C00F0A94C /* Extension */,
 				C5C248FF2DC8DCEC00F0A94C /* Sound */,
 				C5E993122CE3C6CC00C28D36 /* Assets.xcassets */,
@@ -309,6 +408,9 @@
 				Base,
 			);
 			mainGroup = C5E993022CE3C6CA00C28D36;
+			packageReferences = (
+				C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = C5E9930C2CE3C6CA00C28D36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,8 +464,13 @@
 				C5E993412CE3C9DD00C28D36 /* ScannerManager.swift in Sources */,
 				C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */,
 				C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */,
+				C5E57A9B2DC8FE8D008C08D2 /* SupabaseConfig .swift in Sources */,
+				C5E57A962DC8FE5D008C08D2 /* LoginView.swift in Sources */,
 				C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */,
 				C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */,
+				C5E57A912DC8FE15008C08D2 /* User.swift in Sources */,
+				C5E57A932DC8FE36008C08D2 /* AuthView.swift in Sources */,
+				C5E57A982DC8FE6A008C08D2 /* SignupView.swift in Sources */,
 				C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +821,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5E57A802DC8FD55008C08D2 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		C5E57A822DC8FD55008C08D2 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		C5E57A842DC8FD55008C08D2 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		C5E57A862DC8FD55008C08D2 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		C5E57A882DC8FD55008C08D2 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E57A7F2DC8FD55008C08D2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C5E993032CE3C6CA00C28D36 /* Project object */;
 }
