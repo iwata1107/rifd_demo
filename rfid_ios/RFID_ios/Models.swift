@@ -32,3 +32,62 @@ struct UpdateProfileParams: Encodable {
     case website
   }
 }
+
+// MARK: - Inventory Models
+
+enum TargetType: String, Codable {
+    case clinic = "clinic"
+    case cardShop = "card_shop"
+}
+
+struct InventoryMaster: Codable, Identifiable {
+    let id: String
+    let createdAt: String
+    let updatedAt: String
+    let col1: String
+    let col2: String?
+    let col3: String?
+    let productCode: String?
+    let target: TargetType
+    let userId: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case col1 = "col_1"
+        case col2 = "col_2"
+        case col3 = "col_3"
+        case productCode = "product_code"
+        case target
+        case userId = "user_id"
+    }
+}
+
+struct Item: Codable, Identifiable {
+    let id: String
+    let createdAt: String
+    let updatedAt: String
+    let rfid: String
+    let inventoryMasterId: String
+    let userId: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case rfid
+        case inventoryMasterId = "inventory_master_id"
+        case userId = "user_id"
+    }
+}
+
+struct CreateItemParams: Encodable {
+    let rfid: String
+    let inventoryMasterId: String
+
+    enum CodingKeys: String, CodingKey {
+        case rfid
+        case inventoryMasterId = "inventory_master_id"
+    }
+}

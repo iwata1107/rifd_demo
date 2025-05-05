@@ -20,6 +20,8 @@
 		C52AB9B52DC90E0700E553B7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9B42DC90E0700E553B7 /* ProfileView.swift */; };
 		C52AB9B72DC90E1E00E553B7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9B62DC90E1E00E553B7 /* Models.swift */; };
 		C52AB9B92DC90E7600E553B7 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9B82DC90E7600E553B7 /* AvatarImage.swift */; };
+		C52AB9BD2DC9207300E553B7 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9BC2DC9207300E553B7 /* ItemRegistrationView.swift */; };
+		C52AB9BF2DC920AA00E553B7 /* ItemRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */; };
 		C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248C92DC7939000F0A94C /* AppDependencies.swift */; };
 		C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; };
 		C5C248D32DC7BBD100F0A94C /* DENSOScannerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,6 +82,8 @@
 		C52AB9B42DC90E0700E553B7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C52AB9B62DC90E1E00E553B7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		C52AB9B82DC90E7600E553B7 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		C52AB9BC2DC9207300E553B7 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
+		C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationManager.swift; sourceTree = "<group>"; };
 		C5C248C92DC7939000F0A94C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DENSOScannerSDK.framework; sourceTree = "<group>"; };
 		C5C248D62DC7D26500F0A94C /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				C5E9933D2CE3C87600C28D36 /* RFID-ios-Info.plist */,
 				C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */,
 				C5C248C92DC7939000F0A94C /* AppDependencies.swift */,
+				C52AB9BC2DC9207300E553B7 /* ItemRegistrationView.swift */,
+				C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */,
 				C5E993102CE3C6CA00C28D36 /* ContentView.swift */,
 				C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */,
 				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
@@ -390,8 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52AB9BF2DC920AA00E553B7 /* ItemRegistrationManager.swift in Sources */,
 				C5C248D72DC7D26500F0A94C /* SettingManager.swift in Sources */,
 				C52AB9B52DC90E0700E553B7 /* ProfileView.swift in Sources */,
+				C52AB9BD2DC9207300E553B7 /* ItemRegistrationView.swift in Sources */,
 				C52AB9B92DC90E7600E553B7 /* AvatarImage.swift in Sources */,
 				C5C248E12DC7DF0400F0A94C /* CompareMasterManager.swift in Sources */,
 				C52AB9B32DC90DEA00E553B7 /* AuthView.swift in Sources */,

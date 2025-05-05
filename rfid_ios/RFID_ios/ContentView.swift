@@ -1,19 +1,17 @@
-//import SwiftUI
-//import DENSOScannerSDK
+// ContentView.swift
+// RFID_ios
 //
+// Created on 2025/05/06.
 //
-
 
 import SwiftUI
+import Supabase
 
 struct ContentView: View {
     @EnvironmentObject var scanner: ScannerManager
-    @EnvironmentObject var deps:    AppDependencies   // 簡易アクセス
-    
     @State private var tab: Tab = .scanner
-    @State var isAuthenticated = false
-    
-    
+    @State private var isAuthenticated = false
+
     var body: some View {
         Group {
             if isAuthenticated {
@@ -22,14 +20,20 @@ struct ContentView: View {
                         Picker("機能", selection: $tab) {
                             ForEach(Tab.allCases) { Text($0.rawValue).tag($0) }
                         }
-                        .pickerStyle(SegmentedPickerStyle())
-                        
+                        .pickerStyle(.segmented)
+
                         Group {
                             switch tab {
-                            case .scanner : scannerPanel
-                            case .settings: SettingsView()
-                            case .compare : CompareMasterView()
-                            case .profile : ProfileView()
+                            case .scanner:
+                                scannerPanel
+                            case .settings:
+                                SettingsView()
+                            case .compare:
+                                CompareMasterView()
+                            case .profile:
+                                ProfileView()
+                            case .registration:
+                                ItemRegistrationView()
                             }
                         }
                         .frame(maxHeight: .infinity)
@@ -49,35 +53,28 @@ struct ContentView: View {
             }
         }
     }
-    
 }
-
-
-
 
 // MARK: - 各パネル
 private extension ContentView {
-    
-    // スキャナ操作
     var scannerPanel: some View {
         VStack {
             List(scanner.scannedUII, id: \.self) { Text($0) }
-            
+
             HStack(spacing: 10) {
-                // Start / Stop を 1 ボタンでトグル
                 Button {
-                    scanner.readState == .standby ? scanner.startScan()
-                    : scanner.stopScan()
+                    scanner.readState == .standby
+                        ? scanner.startScan()
+                        : scanner.stopScan()
                 } label: {
                     Text(scanner.readState == .standby ? "スキャン開始" : "スキャン停止")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                
+
                 Button("クリア") { scanner.clearScannedData() }
                     .buttonStyle(.bordered)
-                
-                // ★ 新規：再接続
+
                 Button("再接続") { scanner.reconnect() }
                     .buttonStyle(.bordered)
             }
@@ -85,13 +82,14 @@ private extension ContentView {
     }
 }
 
-// MARK: - タブ
-private extension ContentView {
+// MARK: - タブ定義
+extension ContentView {
     enum Tab: String, CaseIterable, Identifiable {
-        case scanner = "スキャナ"
-        case settings = "設定"
-        case compare = "比較"          // ←追加
-        case profile = "プロフィール"
+        case scanner     = "スキャナ"
+        case settings    = "設定"
+        case compare     = "比較"
+        case profile     = "プロフィール"
+        case registration = "登録"
         var id: String { rawValue }
     }
 }
