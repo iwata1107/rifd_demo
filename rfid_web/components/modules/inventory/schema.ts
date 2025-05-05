@@ -23,7 +23,7 @@ export const inventoryMasterSchema = z.object({
     .max(50, { message: "商品コードは50文字以内で入力してください" })
     .optional()
     .nullable(),
-  target: z.enum(["clinic", "card_shop"] as const, {
+  target: z.enum(["clinic", "card_shop", "apparel_shop"] as const, {
     required_error: "業種を選択してください",
     invalid_type_error: "業種の選択が無効です",
   }),
@@ -47,6 +47,8 @@ export function getTargetLabel(target: string): string {
       return "クリニック";
     case "card_shop":
       return "カードショップ";
+    case "apparel_shop":
+      return "アパレルショップ";
     default:
       return target;
   }

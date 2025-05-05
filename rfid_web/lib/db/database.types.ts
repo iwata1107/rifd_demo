@@ -126,7 +126,7 @@ export type Database = {
         | "past_due"
         | "unpaid"
         | "paused";
-      target_type: "clinic" | "card_shop";
+      target_type: "clinic" | "card_shop" | "apparel_shop";
     };
     CompositeTypes: {
       [_ in never]: never;
@@ -255,7 +255,7 @@ export const Constants = {
         "unpaid",
         "paused",
       ],
-      target_type: ["clinic", "card_shop"],
+      target_type: ["clinic", "card_shop", "apparel_shop"],
     },
   },
 } as const;

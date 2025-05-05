@@ -70,19 +70,10 @@ final class ItemRegistrationManager: ObservableObject {
         errorMessage = nil
 
         do {
-            struct CreateItemParams: Encodable {
-                let rfid: String
-                let inventoryMasterId: String
-
-                enum CodingKeys: String, CodingKey {
-                    case rfid
-                    case inventoryMasterId = "inventory_master_id"
-                }
-            }
-
             let params = CreateItemParams(
                 rfid: rfid,
-                inventoryMasterId: master.id
+                inventoryMasterId: master.id,
+                isInventoried: false
             )
 
             print("登録パラメータ: rfid=\(rfid), inventory_master_id=\(master.id)")

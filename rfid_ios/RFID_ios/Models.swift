@@ -38,6 +38,7 @@ struct UpdateProfileParams: Encodable {
 enum TargetType: String, Codable {
     case clinic = "clinic"
     case cardShop = "card_shop"
+    case apparelShop = "apparel_shop"
 }
 
 struct InventoryMaster: Codable, Identifiable {
@@ -50,6 +51,7 @@ struct InventoryMaster: Codable, Identifiable {
     let productCode: String?
     let target: TargetType
     let userId: String?
+    let productImage: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -61,6 +63,7 @@ struct InventoryMaster: Codable, Identifiable {
         case productCode = "product_code"
         case target
         case userId = "user_id"
+        case productImage = "product_image"
     }
 }
 
@@ -71,6 +74,7 @@ struct Item: Codable, Identifiable {
     let rfid: String
     let inventoryMasterId: String
     let userId: String?
+    let isInventoried: Bool
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -79,15 +83,18 @@ struct Item: Codable, Identifiable {
         case rfid
         case inventoryMasterId = "inventory_master_id"
         case userId = "user_id"
+        case isInventoried = "is_inventoried"
     }
 }
 
 struct CreateItemParams: Encodable {
     let rfid: String
     let inventoryMasterId: String
+    let isInventoried: Bool?
 
     enum CodingKeys: String, CodingKey {
         case rfid
         case inventoryMasterId = "inventory_master_id"
+        case isInventoried = "is_inventoried"
     }
 }
