@@ -38,7 +38,7 @@ export default async function Home() {
                 >
                   <Play className="mr-2" size={16} /> Demo
                 </Link>
-                <Link href="/apps/chat" className={cn(buttonVariants())}>
+                <Link href="/inventory" className={cn(buttonVariants())}>
                   Get Started
                 </Link>
               </div>

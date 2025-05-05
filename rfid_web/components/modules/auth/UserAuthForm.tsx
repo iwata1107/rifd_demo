@@ -48,7 +48,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       });
     }
 
-    window.location.href = "/apps/chat";
+    window.location.href = "/inventory";
   }
 
   return (

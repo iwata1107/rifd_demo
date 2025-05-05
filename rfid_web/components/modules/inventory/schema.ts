@@ -6,16 +6,16 @@ import { Constants } from "@/lib/db/database.types";
 export const inventoryMasterSchema = z.object({
   col_1: z
     .string()
-    .min(1, { message: "名前は必須です" })
-    .max(100, { message: "名前は100文字以内で入力してください" }),
+    .min(1, { message: "項目1は必須です" })
+    .max(100, { message: "項目1は100文字以内で入力してください" }),
   col_2: z
     .string()
-    .max(500, { message: "説明は500文字以内で入力してください" })
+    .max(500, { message: "項目2は500文字以内で入力してください" })
     .optional()
     .nullable(),
   col_3: z
     .string()
-    .max(50, { message: "カテゴリは50文字以内で入力してください" })
+    .max(50, { message: "項目3は50文字以内で入力してください" })
     .optional()
     .nullable(),
   product_code: z

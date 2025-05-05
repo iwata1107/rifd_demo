@@ -55,7 +55,7 @@ export function UserSignupForm({ className, ...props }: UserSignupFormProps) {
       });
     }
 
-    replace("/apps/chat");
+    replace("/inventory");
   }
 
   return (

@@ -1,6 +1,4 @@
-import { cookies } from "next/headers";
-
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/client";
 
 import { Database } from "./database.types";
 import { InventoryMaster } from "./index";
@@ -9,8 +7,7 @@ import { InventoryMaster } from "./index";
  * 在庫管理マスターを取得する
  */
 export async function getInventoryMasters() {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
   const { data, error } = await supabase
     .from("inventory_masters")
     .select("*")
@@ -30,8 +27,7 @@ export async function getInventoryMasters() {
 export async function getInventoryMastersByTarget(
   target: Database["public"]["Enums"]["target_type"]
 ) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
   const { data, error } = await supabase
     .from("inventory_masters")
     .select("*")
@@ -53,8 +49,7 @@ export async function getInventoryMastersByTarget(
  * IDで在庫管理マスターを取得する
  */
 export async function getInventoryMasterById(id: string) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
   const { data, error } = await supabase
     .from("inventory_masters")
     .select("*")
@@ -78,8 +73,7 @@ export async function createInventoryMaster(
     "id" | "created_at" | "updated_at" | "user_id"
   >
 ) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
   const { data, error } = await supabase
     .from("inventory_masters")
     .insert(inventoryMaster)
@@ -106,8 +100,7 @@ export async function updateInventoryMaster(
     >
   >
 ) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   // 更新時間を現在時刻に設定
   const updatedData = {
@@ -134,8 +127,7 @@ export async function updateInventoryMaster(
  * 在庫管理マスターを削除する
  */
 export async function deleteInventoryMaster(id: string) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
   const { error } = await supabase
     .from("inventory_masters")
     .delete()

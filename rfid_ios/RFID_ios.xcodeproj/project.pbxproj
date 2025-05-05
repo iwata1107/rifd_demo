@@ -13,7 +13,6 @@
 		C5C248D72DC7D26500F0A94C /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248D62DC7D26500F0A94C /* SettingManager.swift */; };
 		C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248D82DC7D43400F0A94C /* SettingView.swift */; };
 		C5C248DB2DC7DB3E00F0A94C /* SettingDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */; };
-		C5C248DD2DC7DEF000F0A94C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248DC2DC7DEF000F0A94C /* File.swift */; };
 		C5C248E12DC7DF0400F0A94C /* CompareMasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */; };
 		C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */; };
 		C5C249002DC8DCEC00F0A94C /* track1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FA2DC8DCEC00F0A94C /* track1.wav */; };
@@ -68,7 +67,6 @@
 		C5C248D62DC7D26500F0A94C /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		C5C248D82DC7D43400F0A94C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataSet.swift; sourceTree = "<group>"; };
-		C5C248DC2DC7DEF000F0A94C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareMasterManager.swift; sourceTree = "<group>"; };
 		C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareMasterView.swift; sourceTree = "<group>"; };
 		C5C248FA2DC8DCEC00F0A94C /* track1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track1.wav; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
 				C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */,
 				C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */,
-				C5C248DC2DC7DEF000F0A94C /* File.swift */,
 				C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */,
 				C5C248D82DC7D43400F0A94C /* SettingView.swift */,
 				C5C2490A2DC8DD0C00F0A94C /* Extension */,
@@ -365,7 +362,6 @@
 				C5E993412CE3C9DD00C28D36 /* ScannerManager.swift in Sources */,
 				C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */,
 				C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */,
-				C5C248DD2DC7DEF000F0A94C /* File.swift in Sources */,
 				C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */,
 				C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */,
 				C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */,

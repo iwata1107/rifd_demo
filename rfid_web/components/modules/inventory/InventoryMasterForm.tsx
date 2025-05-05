@@ -37,7 +37,7 @@ export default function InventoryMasterForm() {
         col_2: "",
         col_3: "",
         product_code: "",
-        target: undefined,
+        target: "card_shop",
       },
     });
 
@@ -75,11 +75,11 @@ export default function InventoryMasterForm() {
         <div className="space-y-4">
           <div>
             <Label htmlFor="col_1">
-              名前 <span className="text-red-500">*</span>
+              項目1 <span className="text-red-500">*</span>
             </Label>
             <InputField
               id="col_1"
-              placeholder="在庫アイテム名"
+              placeholder="項目1を入力してください"
               register={register}
               name="col_1"
               formState={formState}
@@ -87,10 +87,10 @@ export default function InventoryMasterForm() {
           </div>
 
           <div>
-            <Label htmlFor="col_2">説明</Label>
+            <Label htmlFor="col_2">項目2</Label>
             <TextAreaField
               id="col_2"
-              placeholder="説明を入力してください"
+              placeholder="項目2を入力してください"
               register={register}
               name="col_2"
               formState={formState}
@@ -98,10 +98,10 @@ export default function InventoryMasterForm() {
           </div>
 
           <div>
-            <Label htmlFor="col_3">カテゴリ</Label>
+            <Label htmlFor="col_3">項目3</Label>
             <InputField
               id="col_3"
-              placeholder="カテゴリ"
+              placeholder="項目3を入力してください"
               register={register}
               name="col_3"
               formState={formState}

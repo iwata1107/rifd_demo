@@ -10,6 +10,7 @@ import { ThemeProvider } from "next-themes";
 
 import { siteConfig } from "@/config/site";
 import { Toaster } from "@/components/ui/Toaster";
+import { NavigationBar } from "@/components/navigation/NavigationBar";
 
 export const metadata: Metadata = {
   title: {
@@ -50,7 +51,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body className="min-h-screen bg-background font-sans antialiased">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
+            <NavigationBar />
+            <div className="pt-16">{children}</div>
           </ThemeProvider>
           <Toaster />
           <AxiomWebVitals />

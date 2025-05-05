@@ -19,6 +19,7 @@ export default async function InventoryMasterDetailPage({
   params,
 }: InventoryMasterDetailPageProps) {
   try {
+    console.log(params);
     const inventoryMaster = await getInventoryMasterById(params.id);
 
     return (
@@ -46,14 +47,14 @@ export default async function InventoryMasterDetailPage({
           <div className="space-y-4">
             {inventoryMaster.col_2 && (
               <div>
-                <h4 className="mb-1 font-semibold">説明</h4>
+                <h4 className="mb-1 font-semibold">項目2</h4>
                 <p className="text-muted-foreground">{inventoryMaster.col_2}</p>
               </div>
             )}
 
             {inventoryMaster.col_3 && (
               <div>
-                <h4 className="mb-1 font-semibold">カテゴリ</h4>
+                <h4 className="mb-1 font-semibold">項目3</h4>
                 <p className="text-muted-foreground">{inventoryMaster.col_3}</p>
               </div>
             )}

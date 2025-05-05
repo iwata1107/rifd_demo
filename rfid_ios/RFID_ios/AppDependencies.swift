@@ -12,15 +12,22 @@ import DENSOScannerSDK
 @MainActor
 final class AppDependencies: ObservableObject {
 
-    let scannerManager:  ScannerManager
-    let settingManager:  SettingManager
-    let compareManager:  CompareMasterManager      // ←追加
+    let scannerManager: ScannerManager
+    let settingManager: SettingManager
+    let compareManager: CompareMasterManager
+    let authManager: AuthManager
+    let inventoryManager: InventoryMasterManager
 
     init() {
+        // スキャナー関連のマネージャー
         let sm = ScannerManager()
         scannerManager = sm
         settingManager = SettingManager(scannerManager: sm)
         compareManager = CompareMasterManager(scannerManager: sm)
+
+        // Supabase関連のマネージャー
+        authManager = AuthManager()
+        inventoryManager = InventoryMasterManager()
 
         // READY 後の処理など…
         scannerManager.onScannerReady = { [weak self] _, _ in
