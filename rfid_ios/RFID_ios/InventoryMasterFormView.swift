@@ -189,8 +189,8 @@ struct InventoryMasterFormView: View {
                     .padding(.vertical, 14)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(inventoryMasterManager.isLoading || !inventoryMasterManager.isFormValid)
-                .opacity(inventoryMasterManager.isFormValid ? 1.0 : 0.6)
+                .disabled(inventoryMasterManager.isLoading || inventoryMasterManager.isUploadingImage || !inventoryMasterManager.isFormValid)
+                .opacity((inventoryMasterManager.isFormValid && !inventoryMasterManager.isUploadingImage) ? 1.0 : 0.6)
                 .padding(.top, 10)
             }
             .padding()
@@ -205,6 +205,8 @@ struct InventoryMasterFormView: View {
         }
         .onChange(of: imageSelection) { newValue in
             guard let newValue else { return }
+            // 新しい画像を選択したタイミングで、以前の URL をクリアしておく
+            inventoryMasterManager.productImage = nil
             Task {
                 do {
                     // Data を取得

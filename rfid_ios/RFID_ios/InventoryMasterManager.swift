@@ -23,6 +23,8 @@ final class InventoryMasterManager: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var isLoading: Bool = false
     @Published var isSuccess: Bool = false
+    // 画像アップロード状態
+    @Published var isUploadingImage: Bool = false
 
     // 依存性
     private let scanner: ScannerManager
@@ -103,6 +105,16 @@ final class InventoryMasterManager: ObservableObject {
 
     // 画像アップロード処理
     func uploadImage(imageData: Data) async -> String? {
+        // アップロード開始
+        await MainActor.run { self.isUploadingImage = true }
+
+        // defer で終了時にフラグを下げる
+        defer {
+            Task { @MainActor in
+                self.isUploadingImage = false
+            }
+        }
+
         do {
             // ファイル名
             let fileExt  = "jpg"
@@ -129,7 +141,6 @@ final class InventoryMasterManager: ObservableObject {
         }
     }
 
-
     // フォームリセット
     func resetForm() {
         col1 = ""
@@ -139,5 +150,6 @@ final class InventoryMasterManager: ObservableObject {
         targetType = .cardShop
         productImage = nil
         errorMessage = nil
+        isUploadingImage = false
     }
 }
