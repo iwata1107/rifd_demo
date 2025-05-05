@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248C92DC7939000F0A94C /* AppDependencies.swift */; };
+		C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; };
+		C5C248D32DC7BBD100F0A94C /* DENSOScannerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5C248D72DC7D26500F0A94C /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248D62DC7D26500F0A94C /* SettingManager.swift */; };
+		C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248D82DC7D43400F0A94C /* SettingView.swift */; };
+		C5C248DB2DC7DB3E00F0A94C /* SettingDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */; };
+		C5C248DD2DC7DEF000F0A94C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248DC2DC7DEF000F0A94C /* File.swift */; };
+		C5C248E12DC7DF0400F0A94C /* CompareMasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */; };
+		C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */; };
+		C5C249002DC8DCEC00F0A94C /* track1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FA2DC8DCEC00F0A94C /* track1.wav */; };
+		C5C249012DC8DCEC00F0A94C /* track5.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FE2DC8DCEC00F0A94C /* track5.wav */; };
+		C5C249022DC8DCEC00F0A94C /* track4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FD2DC8DCEC00F0A94C /* track4.wav */; };
+		C5C249032DC8DCEC00F0A94C /* track2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FB2DC8DCEC00F0A94C /* track2.wav */; };
+		C5C249042DC8DCEC00F0A94C /* track3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5C248FC2DC8DCEC00F0A94C /* track3.wav */; };
+		C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */; };
+		C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E993102CE3C6CA00C28D36 /* ContentView.swift */; };
+		C5E993132CE3C6CC00C28D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E993122CE3C6CC00C28D36 /* Assets.xcassets */; };
+		C5E993162CE3C6CC00C28D36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E993152CE3C6CC00C28D36 /* Preview Assets.xcassets */; };
+		C5E993202CE3C6CC00C28D36 /* RFID_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9931F2CE3C6CC00C28D36 /* RFID_iosTests.swift */; };
+		C5E9932A2CE3C6CC00C28D36 /* RFID_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E993292CE3C6CC00C28D36 /* RFID_iosUITests.swift */; };
+		C5E9932C2CE3C6CC00C28D36 /* RFID_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E9932B2CE3C6CC00C28D36 /* RFID_iosUITestsLaunchTests.swift */; };
+		C5E993412CE3C9DD00C28D36 /* ScannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5E9931C2CE3C6CC00C28D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5E993032CE3C6CA00C28D36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5E9930A2CE3C6CA00C28D36;
+			remoteInfo = RFID_ios;
+		};
+		C5E993262CE3C6CC00C28D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5E993032CE3C6CA00C28D36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5E9930A2CE3C6CA00C28D36;
+			remoteInfo = RFID_ios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5E993452CE3CA9C00C28D36 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C5C248D32DC7BBD100F0A94C /* DENSOScannerSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C5C248C92DC7939000F0A94C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DENSOScannerSDK.framework; sourceTree = "<group>"; };
+		C5C248D62DC7D26500F0A94C /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
+		C5C248D82DC7D43400F0A94C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataSet.swift; sourceTree = "<group>"; };
+		C5C248DC2DC7DEF000F0A94C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareMasterManager.swift; sourceTree = "<group>"; };
+		C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareMasterView.swift; sourceTree = "<group>"; };
+		C5C248FA2DC8DCEC00F0A94C /* track1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track1.wav; sourceTree = "<group>"; };
+		C5C248FB2DC8DCEC00F0A94C /* track2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track2.wav; sourceTree = "<group>"; };
+		C5C248FC2DC8DCEC00F0A94C /* track3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track3.wav; sourceTree = "<group>"; };
+		C5C248FD2DC8DCEC00F0A94C /* track4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track4.wav; sourceTree = "<group>"; };
+		C5C248FE2DC8DCEC00F0A94C /* track5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = track5.wav; sourceTree = "<group>"; };
+		C5C249052DC8DD0C00F0A94C /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
+		C5C249062DC8DD0C00F0A94C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C5C249072DC8DD0C00F0A94C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C5C249082DC8DD0C00F0A94C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		C5C249092DC8DD0C00F0A94C /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		C5E9930B2CE3C6CA00C28D36 /* RFID_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFID_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFID_iosApp.swift; sourceTree = "<group>"; };
+		C5E993102CE3C6CA00C28D36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C5E993122CE3C6CC00C28D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5E993152CE3C6CC00C28D36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5E9931B2CE3C6CC00C28D36 /* RFID_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RFID_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E9931F2CE3C6CC00C28D36 /* RFID_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFID_iosTests.swift; sourceTree = "<group>"; };
+		C5E993252CE3C6CC00C28D36 /* RFID_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RFID_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E993292CE3C6CC00C28D36 /* RFID_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFID_iosUITests.swift; sourceTree = "<group>"; };
+		C5E9932B2CE3C6CC00C28D36 /* RFID_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFID_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5E9933D2CE3C87600C28D36 /* RFID-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RFID-ios-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerManager.swift; sourceTree = "<group>"; };
+		C5E993522CE3DA3A00C28D36 /* RFID_ios-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RFID_ios-Swift.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5E993082CE3C6CA00C28D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993182CE3C6CC00C28D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993222CE3C6CC00C28D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C5C248FF2DC8DCEC00F0A94C /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				C5C248FA2DC8DCEC00F0A94C /* track1.wav */,
+				C5C248FB2DC8DCEC00F0A94C /* track2.wav */,
+				C5C248FC2DC8DCEC00F0A94C /* track3.wav */,
+				C5C248FD2DC8DCEC00F0A94C /* track4.wav */,
+				C5C248FE2DC8DCEC00F0A94C /* track5.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		C5C2490A2DC8DD0C00F0A94C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C5C249052DC8DD0C00F0A94C /* Notification.Name+Extension.swift */,
+				C5C249062DC8DD0C00F0A94C /* String+Extension.swift */,
+				C5C249072DC8DD0C00F0A94C /* UIImage+Extension.swift */,
+				C5C249082DC8DD0C00F0A94C /* UITextField+Extension.swift */,
+				C5C249092DC8DD0C00F0A94C /* UITextView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C5E993022CE3C6CA00C28D36 = {
+			isa = PBXGroup;
+			children = (
+				C5E993522CE3DA3A00C28D36 /* RFID_ios-Swift.h */,
+				C5E9930D2CE3C6CA00C28D36 /* RFID_ios */,
+				C5E9931E2CE3C6CC00C28D36 /* RFID_iosTests */,
+				C5E993282CE3C6CC00C28D36 /* RFID_iosUITests */,
+				C5E9930C2CE3C6CA00C28D36 /* Products */,
+				C5E993382CE3C82000C28D36 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5E9930C2CE3C6CA00C28D36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5E9930B2CE3C6CA00C28D36 /* RFID_ios.app */,
+				C5E9931B2CE3C6CC00C28D36 /* RFID_iosTests.xctest */,
+				C5E993252CE3C6CC00C28D36 /* RFID_iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5E9930D2CE3C6CA00C28D36 /* RFID_ios */ = {
+			isa = PBXGroup;
+			children = (
+				C5E9933D2CE3C87600C28D36 /* RFID-ios-Info.plist */,
+				C5E9930E2CE3C6CA00C28D36 /* RFID_iosApp.swift */,
+				C5C248C92DC7939000F0A94C /* AppDependencies.swift */,
+				C5E993102CE3C6CA00C28D36 /* ContentView.swift */,
+				C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */,
+				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
+				C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */,
+				C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */,
+				C5C248DC2DC7DEF000F0A94C /* File.swift */,
+				C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */,
+				C5C248D82DC7D43400F0A94C /* SettingView.swift */,
+				C5C2490A2DC8DD0C00F0A94C /* Extension */,
+				C5C248FF2DC8DCEC00F0A94C /* Sound */,
+				C5E993122CE3C6CC00C28D36 /* Assets.xcassets */,
+				C5E993142CE3C6CC00C28D36 /* Preview Content */,
+			);
+			path = RFID_ios;
+			sourceTree = "<group>";
+		};
+		C5E993142CE3C6CC00C28D36 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C5E993152CE3C6CC00C28D36 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C5E9931E2CE3C6CC00C28D36 /* RFID_iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5E9931F2CE3C6CC00C28D36 /* RFID_iosTests.swift */,
+			);
+			path = RFID_iosTests;
+			sourceTree = "<group>";
+		};
+		C5E993282CE3C6CC00C28D36 /* RFID_iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C5E993292CE3C6CC00C28D36 /* RFID_iosUITests.swift */,
+				C5E9932B2CE3C6CC00C28D36 /* RFID_iosUITestsLaunchTests.swift */,
+			);
+			path = RFID_iosUITests;
+			sourceTree = "<group>";
+		};
+		C5E993382CE3C82000C28D36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5E9930A2CE3C6CA00C28D36 /* RFID_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5E9932F2CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_ios" */;
+			buildPhases = (
+				C5E993072CE3C6CA00C28D36 /* Sources */,
+				C5E993082CE3C6CA00C28D36 /* Frameworks */,
+				C5E993092CE3C6CA00C28D36 /* Resources */,
+				C5E993452CE3CA9C00C28D36 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RFID_ios;
+			productName = RFID_ios;
+			productReference = C5E9930B2CE3C6CA00C28D36 /* RFID_ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5E9931A2CE3C6CC00C28D36 /* RFID_iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5E993322CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_iosTests" */;
+			buildPhases = (
+				C5E993172CE3C6CC00C28D36 /* Sources */,
+				C5E993182CE3C6CC00C28D36 /* Frameworks */,
+				C5E993192CE3C6CC00C28D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5E9931D2CE3C6CC00C28D36 /* PBXTargetDependency */,
+			);
+			name = RFID_iosTests;
+			productName = RFID_iosTests;
+			productReference = C5E9931B2CE3C6CC00C28D36 /* RFID_iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5E993242CE3C6CC00C28D36 /* RFID_iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5E993352CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_iosUITests" */;
+			buildPhases = (
+				C5E993212CE3C6CC00C28D36 /* Sources */,
+				C5E993222CE3C6CC00C28D36 /* Frameworks */,
+				C5E993232CE3C6CC00C28D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5E993272CE3C6CC00C28D36 /* PBXTargetDependency */,
+			);
+			name = RFID_iosUITests;
+			productName = RFID_iosUITests;
+			productReference = C5E993252CE3C6CC00C28D36 /* RFID_iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5E993032CE3C6CA00C28D36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					C5E9930A2CE3C6CA00C28D36 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					C5E9931A2CE3C6CC00C28D36 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C5E9930A2CE3C6CA00C28D36;
+					};
+					C5E993242CE3C6CC00C28D36 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C5E9930A2CE3C6CA00C28D36;
+					};
+				};
+			};
+			buildConfigurationList = C5E993062CE3C6CA00C28D36 /* Build configuration list for PBXProject "RFID_ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5E993022CE3C6CA00C28D36;
+			productRefGroup = C5E9930C2CE3C6CA00C28D36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5E9930A2CE3C6CA00C28D36 /* RFID_ios */,
+				C5E9931A2CE3C6CC00C28D36 /* RFID_iosTests */,
+				C5E993242CE3C6CC00C28D36 /* RFID_iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5E993092CE3C6CA00C28D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E993162CE3C6CC00C28D36 /* Preview Assets.xcassets in Resources */,
+				C5C249002DC8DCEC00F0A94C /* track1.wav in Resources */,
+				C5C249012DC8DCEC00F0A94C /* track5.wav in Resources */,
+				C5C249022DC8DCEC00F0A94C /* track4.wav in Resources */,
+				C5C249032DC8DCEC00F0A94C /* track2.wav in Resources */,
+				C5C249042DC8DCEC00F0A94C /* track3.wav in Resources */,
+				C5E993132CE3C6CC00C28D36 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993192CE3C6CC00C28D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993232CE3C6CC00C28D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5E993072CE3C6CA00C28D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5C248D72DC7D26500F0A94C /* SettingManager.swift in Sources */,
+				C5C248E12DC7DF0400F0A94C /* CompareMasterManager.swift in Sources */,
+				C5C248DB2DC7DB3E00F0A94C /* SettingDataSet.swift in Sources */,
+				C5E993412CE3C9DD00C28D36 /* ScannerManager.swift in Sources */,
+				C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */,
+				C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */,
+				C5C248DD2DC7DEF000F0A94C /* File.swift in Sources */,
+				C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */,
+				C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */,
+				C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993172CE3C6CC00C28D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E993202CE3C6CC00C28D36 /* RFID_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E993212CE3C6CC00C28D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E9932C2CE3C6CC00C28D36 /* RFID_iosUITestsLaunchTests.swift in Sources */,
+				C5E9932A2CE3C6CC00C28D36 /* RFID_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5E9931D2CE3C6CC00C28D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5E9930A2CE3C6CA00C28D36 /* RFID_ios */;
+			targetProxy = C5E9931C2CE3C6CC00C28D36 /* PBXContainerItemProxy */;
+		};
+		C5E993272CE3C6CC00C28D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5E9930A2CE3C6CA00C28D36 /* RFID_ios */;
+			targetProxy = C5E993262CE3C6CC00C28D36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C5E9932D2CE3C6CC00C28D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = RFID_ios;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C5E9932E2CE3C6CC00C28D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_MODULE_NAME = RFID_ios;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5E993302CE3C6CC00C28D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RFID_ios/Preview Content\"";
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RFID-ios-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RFID_ios-Swift.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C5E993312CE3C6CC00C28D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RFID_ios/Preview Content\"";
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RFID-ios-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RFID_ios-Swift.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C5E993332CE3C6CC00C28D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RFID_ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RFID_ios";
+			};
+			name = Debug;
+		};
+		C5E993342CE3C6CC00C28D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RFID_ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RFID_ios";
+			};
+			name = Release;
+		};
+		C5E993362CE3C6CC00C28D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RFID_ios;
+			};
+			name = Debug;
+		};
+		C5E993372CE3C6CC00C28D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QL2S95U5AS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techno-chain.RFID-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RFID_ios;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5E993062CE3C6CA00C28D36 /* Build configuration list for PBXProject "RFID_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E9932D2CE3C6CC00C28D36 /* Debug */,
+				C5E9932E2CE3C6CC00C28D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5E9932F2CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E993302CE3C6CC00C28D36 /* Debug */,
+				C5E993312CE3C6CC00C28D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5E993322CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E993332CE3C6CC00C28D36 /* Debug */,
+				C5E993342CE3C6CC00C28D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5E993352CE3C6CC00C28D36 /* Build configuration list for PBXNativeTarget "RFID_iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E993362CE3C6CC00C28D36 /* Debug */,
+				C5E993372CE3C6CC00C28D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5E993032CE3C6CA00C28D36 /* Project object */;
+}

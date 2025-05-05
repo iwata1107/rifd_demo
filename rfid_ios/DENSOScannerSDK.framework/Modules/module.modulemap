@@ -1,0 +1,6 @@
+framework module DENSOScannerSDK {
+  umbrella header "DensoScannerSDK.h"
+  export *
+
+  module * { export * }
+}
