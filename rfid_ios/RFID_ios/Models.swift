@@ -98,3 +98,23 @@ struct CreateItemParams: Encodable {
         case isInventoried = "is_inventoried"
     }
 }
+
+struct CreateInventoryMasterParams: Encodable {
+    let col1: String
+    let col2: String?
+    let col3: String?
+    let productCode: String?
+    let target: String
+    let userId: String?
+    let productImage: String?
+
+    enum CodingKeys: String, CodingKey {
+        case col1 = "col_1"
+        case col2 = "col_2"
+        case col3 = "col_3"
+        case productCode = "product_code"
+        case target
+        case userId = "user_id"
+        case productImage = "product_image"
+    }
+}

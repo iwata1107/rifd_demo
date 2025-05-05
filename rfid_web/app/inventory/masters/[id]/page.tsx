@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -64,6 +65,29 @@ export default async function InventoryMasterDetailPage({
                 <h4 className="mb-1 font-semibold">商品コード</h4>
                 <p className="text-muted-foreground">
                   {inventoryMaster.product_code}
+                </p>
+              </div>
+            )}
+
+            {inventoryMaster.product_image && (
+              <div>
+                <h4 className="mb-1 font-semibold">商品画像</h4>
+                <div className="relative mt-2 h-60 w-full overflow-hidden rounded border">
+                  <Image
+                    src={inventoryMaster.product_image}
+                    alt={`${inventoryMaster.col_1}の画像`}
+                    fill
+                    style={{ objectFit: "contain" }}
+                    onError={(e) => {
+                      // エラー時に代替テキストを表示
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.parentElement!.innerHTML =
+                        '<div class="flex h-full w-full items-center justify-center bg-gray-100 text-sm text-gray-500">画像を読み込めませんでした</div>';
+                    }}
+                  />
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground break-all">
+                  URL: {inventoryMaster.product_image}
                 </p>
               </div>
             )}

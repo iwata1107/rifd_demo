@@ -16,6 +16,7 @@ final class AppDependencies: ObservableObject {
     let settingManager:  SettingManager
     let compareManager:  CompareMasterManager
     let itemRegistrationManager: ItemRegistrationManager
+    let inventoryMasterManager: InventoryMasterManager
 
     init() {
         // Scanner 周り
@@ -24,6 +25,7 @@ final class AppDependencies: ObservableObject {
         settingManager = SettingManager(scannerManager: sm)
         compareManager = CompareMasterManager(scannerManager: sm)
         itemRegistrationManager = ItemRegistrationManager(scannerManager: sm)
+        inventoryMasterManager = InventoryMasterManager(scannerManager: sm)
 
         // スキャナ準備完了後のコールバック
         scannerManager.onScannerReady = { [weak self] _, _ in

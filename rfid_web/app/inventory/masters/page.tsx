@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Edit, Eye, Plus, Search } from "lucide-react";
 
@@ -103,6 +104,7 @@ export default function InventoryMastersPage() {
                 <th className="px-4 py-3 text-left font-medium">項目2</th>
                 <th className="px-4 py-3 text-left font-medium">項目3</th>
                 <th className="px-4 py-3 text-left font-medium">商品コード</th>
+                <th className="px-4 py-3 text-left font-medium">画像</th>
                 <th className="px-4 py-3 text-left font-medium">業種</th>
                 <th className="px-4 py-3 text-left font-medium">作成日</th>
                 <th className="px-4 py-3 text-left font-medium">操作</th>
@@ -117,6 +119,25 @@ export default function InventoryMastersPage() {
                   </td>
                   <td className="px-4 py-3">{master.col_3 || "-"}</td>
                   <td className="px-4 py-3">{master.product_code || "-"}</td>
+                  <td className="px-4 py-3">
+                    {master.product_image ? (
+                      <div className="relative h-10 w-10 overflow-hidden rounded border">
+                        <Image
+                          src={master.product_image}
+                          alt={`${master.col_1}のサムネイル`}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                            e.currentTarget.parentElement!.innerHTML =
+                              '<div class="flex h-full w-full items-center justify-center bg-gray-100 text-xs text-gray-500">×</div>';
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
                   <td className="px-4 py-3">
                     <span className="rounded bg-primary/10 px-2 py-1 text-xs text-primary">
                       {getTargetLabel(master.target)}

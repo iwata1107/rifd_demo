@@ -23,6 +23,12 @@ export const inventoryMasterSchema = z.object({
     .max(50, { message: "商品コードは50文字以内で入力してください" })
     .optional()
     .nullable(),
+  product_image: z
+    .string()
+    .max(1000, { message: "画像URLは1000文字以内で入力してください" })
+    .url({ message: "有効なURLを入力してください" })
+    .optional()
+    .nullable(),
   target: z.enum(["clinic", "card_shop", "apparel_shop"] as const, {
     required_error: "業種を選択してください",
     invalid_type_error: "業種の選択が無効です",

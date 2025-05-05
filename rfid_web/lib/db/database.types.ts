@@ -18,6 +18,7 @@ export type Database = {
           col_2: string | null;
           col_3: string | null;
           product_code: string | null;
+          product_image: string | null;
           target: Database["public"]["Enums"]["target_type"];
           user_id: string | null;
         };
@@ -29,6 +30,7 @@ export type Database = {
           col_2?: string | null;
           col_3?: string | null;
           product_code?: string | null;
+          product_image?: string | null;
           target: Database["public"]["Enums"]["target_type"];
           user_id?: string | null;
         };
@@ -40,6 +42,7 @@ export type Database = {
           col_2?: string | null;
           col_3?: string | null;
           product_code?: string | null;
+          product_image?: string | null;
           target?: Database["public"]["Enums"]["target_type"];
           user_id?: string | null;
         };

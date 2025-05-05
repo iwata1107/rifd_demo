@@ -16,187 +16,189 @@ struct ItemRegistrationView: View {
     @State private var isRegistering = false
 
     var body: some View {
-        VStack(spacing: 20) {
-            // 商品コード入力
-            VStack(alignment: .leading, spacing: 8) {
-                Text("商品コード")
-                    .font(.headline)
-                    .fontWeight(.bold)
-
-                HStack {
-                    TextField(
-                        "商品コードを入力",
-                        text: $itemRegistrationManager.productCodeInput
-                    )
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.vertical, 4)
-
-                    Button("検索") {
-                        Task {
-                            await itemRegistrationManager.searchMastersByProductCode()
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                }
-            }
-            .padding()
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(10)
-
-            // 検索結果
-            if !itemRegistrationManager.inventoryMasters.isEmpty {
+        ScrollView {
+            VStack(spacing: 20) {
+                // 商品コード入力
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("検索結果")
+                    Text("商品コード")
+                        .font(.headline)
+                        .fontWeight(.bold)
+
+                    HStack {
+                        TextField(
+                            "商品コードを入力",
+                            text: $itemRegistrationManager.productCodeInput
+                        )
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.vertical, 4)
+
+                        Button("検索") {
+                            Task {
+                                await itemRegistrationManager.searchMastersByProductCode()
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .controlSize(.regular)
+                    }
+                }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(10)
+
+                // 検索結果
+                if !itemRegistrationManager.inventoryMasters.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("検索結果")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding(.horizontal)
+
+                        ScrollView {
+                            LazyVStack(spacing: 12) {
+                                ForEach(itemRegistrationManager.inventoryMasters) { master in
+                                    Button(action: {
+                                        itemRegistrationManager.selectedMaster = master
+                                    }) {
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            Text("商品コード: \(master.productCode ?? "未設定")")
+                                                .font(.headline)
+                                            Text("詳細: \(master.col1)")
+                                                .font(.subheadline)
+                                            if let col2 = master.col2 {
+                                                Text("追加情報: \(col2)")
+                                                    .font(.caption)
+                                            }
+                                        }
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding()
+                                    }
+                                    .buttonStyle(
+                                        SelectionButtonStyle(
+                                            isSelected: itemRegistrationManager.selectedMaster?.id == master.id
+                                        )
+                                    )
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .frame(maxHeight: 220)
+                    }
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
+                }
+
+                // エラーメッセージ
+                if let error = itemRegistrationManager.errorMessage {
+                    Text(error)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                }
+
+                // RFID読み取り結果
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("RFID読み取り結果")
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding(.horizontal)
 
-                    ScrollView {
-                        LazyVStack(spacing: 12) {
-                            ForEach(itemRegistrationManager.inventoryMasters) { master in
-                                Button(action: {
-                                    itemRegistrationManager.selectedMaster = master
-                                }) {
-                                    VStack(alignment: .leading, spacing: 6) {
-                                        Text("商品コード: \(master.productCode ?? "未設定")")
-                                            .font(.headline)
-                                        Text("詳細: \(master.col1)")
-                                            .font(.subheadline)
-                                        if let col2 = master.col2 {
-                                            Text("追加情報: \(col2)")
-                                                .font(.caption)
+                    if scanner.scannedUII.isEmpty {
+                        Text("RFIDをスキャンしてください")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding()
+                    } else {
+                        ScrollView {
+                            LazyVStack(spacing: 8) {
+                                ForEach(scanner.scannedUII, id: \.self) { rfid in
+                                    Button(action: {
+                                        selectedRFID = rfid
+                                    }) {
+                                        HStack {
+                                            Text(rfid)
+                                                .padding()
+                                                .frame(maxWidth: .infinity, alignment: .leading)
                                         }
                                     }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding()
-                                }
-                                .buttonStyle(
-                                    SelectionButtonStyle(
-                                        isSelected: itemRegistrationManager.selectedMaster?.id == master.id
+                                    .buttonStyle(
+                                        SelectionButtonStyle(
+                                            isSelected: selectedRFID == rfid
+                                        )
                                     )
-                                )
+                                }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .frame(maxHeight: 150)
                     }
-                    .frame(maxHeight: 220)
                 }
+                .padding(.vertical)
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
-            }
 
-            // エラーメッセージ
-            if let error = itemRegistrationManager.errorMessage {
-                Text(error)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.red)
-                    .cornerRadius(10)
-            }
-
-            // RFID読み取り結果
-            VStack(alignment: .leading, spacing: 8) {
-                Text("RFID読み取り結果")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
-
-                if scanner.scannedUII.isEmpty {
-                    Text("RFIDをスキャンしてください")
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding()
-                } else {
-                    ScrollView {
-                        LazyVStack(spacing: 8) {
-                            ForEach(scanner.scannedUII, id: \.self) { rfid in
-                                Button(action: {
-                                    selectedRFID = rfid
-                                }) {
-                                    HStack {
-                                        Text(rfid)
-                                            .padding()
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                }
-                                .buttonStyle(
-                                    SelectionButtonStyle(
-                                        isSelected: selectedRFID == rfid
-                                    )
-                                )
-                            }
+                // スキャン操作ボタン
+                HStack(spacing: 15) {
+                    Button {
+                        scanner.readState == .standby
+                            ? scanner.startScan()
+                            : scanner.stopScan()
+                    } label: {
+                        HStack {
+                            Image(systemName: scanner.readState == .standby ? "barcode.viewfinder" : "stop.circle")
+                            Text(scanner.readState == .standby ? "スキャン開始" : "スキャン停止")
                         }
-                        .padding(.horizontal)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
                     }
-                    .frame(maxHeight: 150)
-                }
-            }
-            .padding(.vertical)
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(10)
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.regular)
 
-            // スキャン操作ボタン
-            HStack(spacing: 15) {
-                Button {
-                    scanner.readState == .standby
-                        ? scanner.startScan()
-                        : scanner.stopScan()
-                } label: {
+                    Button(action: {
+                        scanner.clearScannedData()
+                        selectedRFID = nil
+                    }) {
+                        HStack {
+                            Image(systemName: "trash")
+                            Text("クリア")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.regular)
+                }
+
+                // 登録ボタン
+                Button(action: registerItem) {
                     HStack {
-                        Image(systemName: scanner.readState == .standby ? "barcode.viewfinder" : "stop.circle")
-                        Text(scanner.readState == .standby ? "スキャン開始" : "スキャン停止")
+                        if isRegistering {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .padding(.trailing, 8)
+                        }
+                        Text("登録")
+                            .font(.headline)
+                        Image(systemName: "arrow.right.circle.fill")
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
+                    .padding(.vertical, 14)
                 }
                 .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-
-                Button(action: {
-                    scanner.clearScannedData()
-                    selectedRFID = nil
-                }) {
-                    HStack {
-                        Image(systemName: "trash")
-                        Text("クリア")
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.large)
+                .controlSize(.regular)
+                .disabled(
+                    itemRegistrationManager.selectedMaster == nil ||
+                    selectedRFID == nil ||
+                    isRegistering
+                )
+                .padding(.top, 8)
+                .opacity(
+                    (itemRegistrationManager.selectedMaster == nil ||
+                    selectedRFID == nil ||
+                    isRegistering) ? 0.6 : 1.0
+                )
             }
-
-            // 登録ボタン
-            Button(action: registerItem) {
-                HStack {
-                    if isRegistering {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .padding(.trailing, 8)
-                    }
-                    Text("登録")
-                        .font(.headline)
-                    Image(systemName: "arrow.right.circle.fill")
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-            }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .disabled(
-                itemRegistrationManager.selectedMaster == nil ||
-                selectedRFID == nil ||
-                isRegistering
-            )
-            .padding(.top, 8)
-            .opacity(
-                (itemRegistrationManager.selectedMaster == nil ||
-                selectedRFID == nil ||
-                isRegistering) ? 0.6 : 1.0
-            )
         }
         .padding()
         .navigationTitle("商品登録")

@@ -34,6 +34,8 @@ struct ContentView: View {
                                 ProfileView()
                             case .registration:
                                 ItemRegistrationView()
+                            case .masterRegistration:
+                                InventoryMasterFormView()
                             }
                         }
                         .frame(maxHeight: .infinity)
@@ -58,26 +60,60 @@ struct ContentView: View {
 // MARK: - 各パネル
 private extension ContentView {
     var scannerPanel: some View {
-        VStack {
-            List(scanner.scannedUII, id: \.self) { Text($0) }
-
-            HStack(spacing: 10) {
-                Button {
-                    scanner.readState == .standby
-                        ? scanner.startScan()
-                        : scanner.stopScan()
-                } label: {
-                    Text(scanner.readState == .standby ? "スキャン開始" : "スキャン停止")
-                        .frame(maxWidth: .infinity)
+        ScrollView {
+            VStack(spacing: 16) {
+                // 読取済みタグ一覧
+                if scanner.scannedUII.isEmpty {
+                    Text("RFIDをスキャンしてください")
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, minHeight: 120)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
+                } else {
+                    List(scanner.scannedUII, id: \.self) {
+                        Text($0)
+                    }
+                    .frame(height: min(CGFloat(scanner.scannedUII.count) * 44, CGFloat(300)))
+                    .listStyle(.plain)
                 }
-                .buttonStyle(.borderedProminent)
 
-                Button("クリア") { scanner.clearScannedData() }
-                    .buttonStyle(.bordered)
+                // 操作ボタン
+                HStack(spacing: 12) {
+                    Button {
+                        scanner.readState == .standby
+                            ? scanner.startScan()
+                            : scanner.stopScan()
+                    } label: {
+                        HStack {
+                            Image(systemName: scanner.readState == .standby ? "barcode.viewfinder" : "stop.circle")
+                            Text(scanner.readState == .standby ? "スキャン開始" : "スキャン停止")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.small)
 
-                Button("再接続") { scanner.reconnect() }
+                    Button {
+                        scanner.clearScannedData()
+                    } label: {
+                        Image(systemName: "trash")
+                        Text("クリア")
+                    }
                     .buttonStyle(.bordered)
+                    .controlSize(.small)
+
+                    Button {
+                        scanner.reconnect()
+                    } label: {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                        Text("再接続")
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                }
             }
+            .padding(.vertical)
         }
     }
 }
@@ -90,6 +126,7 @@ extension ContentView {
         case compare     = "比較"
         case profile     = "プロフィール"
         case registration = "登録"
+        case masterRegistration = "マスター登録"
         var id: String { rawValue }
     }
 }

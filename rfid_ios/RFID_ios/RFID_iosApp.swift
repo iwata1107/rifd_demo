@@ -17,8 +17,9 @@ struct DensoScannerApp: App {
             ContentView()
                 .environmentObject(deps.scannerManager)
                 .environmentObject(deps.settingManager)
-                .environmentObject(deps.compareManager)   // ←追加
+                .environmentObject(deps.compareManager)
                 .environmentObject(deps.itemRegistrationManager)
+                .environmentObject(deps.inventoryMasterManager)
 
         }
     }

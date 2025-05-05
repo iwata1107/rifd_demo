@@ -22,6 +22,8 @@
 		C52AB9B92DC90E7600E553B7 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9B82DC90E7600E553B7 /* AvatarImage.swift */; };
 		C52AB9BD2DC9207300E553B7 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9BC2DC9207300E553B7 /* ItemRegistrationView.swift */; };
 		C52AB9BF2DC920AA00E553B7 /* ItemRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */; };
+		C52AB9C12DC9595F00E553B7 /* InventoryMasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9C02DC9595F00E553B7 /* InventoryMasterManager.swift */; };
+		C52AB9C32DC9597200E553B7 /* InventoryMasterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9C22DC9597200E553B7 /* InventoryMasterFormView.swift */; };
 		C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248C92DC7939000F0A94C /* AppDependencies.swift */; };
 		C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; };
 		C5C248D32DC7BBD100F0A94C /* DENSOScannerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -84,6 +86,8 @@
 		C52AB9B82DC90E7600E553B7 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		C52AB9BC2DC9207300E553B7 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
 		C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationManager.swift; sourceTree = "<group>"; };
+		C52AB9C02DC9595F00E553B7 /* InventoryMasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryMasterManager.swift; sourceTree = "<group>"; };
+		C52AB9C22DC9597200E553B7 /* InventoryMasterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryMasterFormView.swift; sourceTree = "<group>"; };
 		C5C248C92DC7939000F0A94C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DENSOScannerSDK.framework; sourceTree = "<group>"; };
 		C5C248D62DC7D26500F0A94C /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				C5E993402CE3C9DD00C28D36 /* ScannerManager.swift */,
 				C5C248D62DC7D26500F0A94C /* SettingManager.swift */,
 				C5C248E02DC7DF0400F0A94C /* CompareMasterManager.swift */,
+				C52AB9C02DC9595F00E553B7 /* InventoryMasterManager.swift */,
+				C52AB9C22DC9597200E553B7 /* InventoryMasterFormView.swift */,
 				C5C248E22DC7DF4000F0A94C /* CompareMasterView.swift */,
 				C5C248DA2DC7DB3E00F0A94C /* SettingDataSet.swift */,
 				C5C248D82DC7D43400F0A94C /* SettingView.swift */,
@@ -401,6 +407,7 @@
 				C52AB9B52DC90E0700E553B7 /* ProfileView.swift in Sources */,
 				C52AB9BD2DC9207300E553B7 /* ItemRegistrationView.swift in Sources */,
 				C52AB9B92DC90E7600E553B7 /* AvatarImage.swift in Sources */,
+				C52AB9C32DC9597200E553B7 /* InventoryMasterFormView.swift in Sources */,
 				C5C248E12DC7DF0400F0A94C /* CompareMasterManager.swift in Sources */,
 				C52AB9B32DC90DEA00E553B7 /* AuthView.swift in Sources */,
 				C5C248DB2DC7DB3E00F0A94C /* SettingDataSet.swift in Sources */,
@@ -410,6 +417,7 @@
 				C5E993112CE3C6CA00C28D36 /* ContentView.swift in Sources */,
 				C52AB9AB2DC90B9900E553B7 /* Supabase.swift in Sources */,
 				C5E9930F2CE3C6CA00C28D36 /* RFID_iosApp.swift in Sources */,
+				C52AB9C12DC9595F00E553B7 /* InventoryMasterManager.swift in Sources */,
 				C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */,
 				C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */,
 			);

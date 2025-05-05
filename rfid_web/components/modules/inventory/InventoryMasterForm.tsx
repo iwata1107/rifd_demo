@@ -9,6 +9,7 @@ import { createInventoryMaster } from "@/lib/db/inventory-master";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { InputField, TextAreaField } from "@/components/ui/form/form-fields";
+import { ImageUploader } from "@/components/ui/form/ImageUploader";
 import { Label } from "@/components/ui/Label";
 import {
   Select,
@@ -37,6 +38,7 @@ export default function InventoryMasterForm() {
         col_2: "",
         col_3: "",
         product_code: "",
+        product_image: "",
         target: "card_shop",
       },
     });
@@ -68,6 +70,7 @@ export default function InventoryMasterForm() {
   };
 
   const selectedTarget = watch("target");
+  const productImageUrl = watch("product_image");
 
   return (
     <Card className="p-6">
@@ -116,6 +119,17 @@ export default function InventoryMasterForm() {
               register={register}
               name="product_code"
               formState={formState}
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="product_image">商品画像</Label>
+            <ImageUploader
+              initialImageUrl={productImageUrl || ""}
+              onImageUploaded={(url) => setValue("product_image", url)}
+              onError={(error) =>
+                console.error("画像アップロードエラー:", error)
+              }
             />
           </div>
 
