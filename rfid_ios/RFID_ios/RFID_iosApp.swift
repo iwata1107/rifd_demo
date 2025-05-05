@@ -7,32 +7,19 @@
 
 import SwiftUI
 import DENSOScannerSDK
-import Supabase
 
 @main
 struct DensoScannerApp: App {
     @StateObject private var deps = AppDependencies()
-
-    init() {
-        // Supabaseのセットアップ
-        setupSupabase()
-    }
-
+    
     var body: some Scene {
         WindowGroup {
-            MainContentView()
-                .environmentObject(deps)
+            ContentView()
                 .environmentObject(deps.scannerManager)
                 .environmentObject(deps.settingManager)
-                .environmentObject(deps.compareManager)
-                .environmentObject(deps.authManager)
-                .environmentObject(deps.inventoryManager)
+                .environmentObject(deps.compareManager)   // ←追加
+
         }
     }
-
-    // Supabaseの設定
-    private func setupSupabase() {
-        // ここでSupabaseの設定を行う場合は実装
-        // 例: ログレベルの設定など
-    }
 }
+
