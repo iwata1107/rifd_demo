@@ -123,6 +123,9 @@ final class SettingManager: ObservableObject {
                 guard let self = self else { return }
                 self.isConnected = connected
                 updateBatteryLevel()
+                if connected {
+                    loadCurrentReadPower()
+                }
             }
             .store(in: &cancellables)
     }
@@ -176,12 +179,15 @@ final class SettingManager: ObservableObject {
             print("⚠️ getSettings 失敗: \(error?.localizedDescription ?? "")")
             return false
         }
-        settings.scan.powerLevelRead = Int32(selectedReadPower)
+        let sdkValue = Int32(selectedReadPower)
+        settings.scan.powerLevelRead = sdkValue
+        settings.scan.powerLevelWrite = sdkValue
         rfidScanner.setSettings(settings, error: &error)
         if let error = error {
             print("⚠️ setSettings 失敗: \(error.localizedDescription)")
             return false
         }
+        print("✅ PowerLevelRead 更新完了 → \(selectedReadPower)dBm (sdkValue(raw)=\(sdkValue))")
         return true
     }
     // ↑ ここまで修正部分 ↑
@@ -196,5 +202,23 @@ final class SettingManager: ObservableObject {
     }
     private func sendBarcodeScannerSettings(settingDataSet: SettingDataSet, commScanner: CommScanner) -> Bool {
         scannerManager?.sendBarcodeScannerSettings(settingDataSet: settingDataSet, commScanner: commScanner) ?? false
+    }
+
+    // MARK: - 現在のパワーレベル取得 --------------------------------------
+    private func loadCurrentReadPower() {
+        guard let scanner = commScanner, isConnected else { return }
+        var error: NSError?
+        guard let rfidScanner = scanner.getRFIDScanner(),
+              let settings = rfidScanner.getSettings(&error) else {
+            print("⚠️ loadCurrentReadPower(): 設定取得失敗 → \(error?.localizedDescription ?? "")")
+            return
+        }
+        let currentSdkValue = Int(settings.scan.powerLevelRead)
+        let currentDbm      = currentSdkValue / 10  // SDK 単位 → dBm
+        print("🔸 取得したパワーレベル = \(currentSdkValue) (SDK単位) → \(currentDbm)dBm")
+        if readPowerRange.contains(currentDbm) {
+            // プロパティ更新 (UI反映)。同値なら didSet は発火しない
+            selectedReadPower = currentDbm
+        }
     }
 }

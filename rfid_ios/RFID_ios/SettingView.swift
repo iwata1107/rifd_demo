@@ -32,9 +32,13 @@ struct SettingsView: View {
 
                 // 追加: 読み取り強度（パワーレベル）設定
                 Section(header: Text("RFID Read Power")) {
-                    Stepper("Power: \(settingManager.selectedReadPower) dBm", value: $settingManager.selectedReadPower,
-                            in: settingManager.readPowerRange.first!...settingManager.readPowerRange.last!)
-                        .disabled(!settingManager.isConnected)
+                    Picker("Power Level (dBm)", selection: $settingManager.selectedReadPower) {
+                        ForEach(settingManager.readPowerRange, id: \ .self) { v in
+                            Text("\(v) dBm").tag(v)
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .disabled(!settingManager.isConnected)
                 }
 
                 Section(header: Text("Scanner Info")) {
