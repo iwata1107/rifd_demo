@@ -36,6 +36,8 @@ struct ContentView: View {
                                 ItemRegistrationView()
                             case .masterRegistration:
                                 InventoryMasterFormView()
+                            case .search:
+                                ItemSearchView()
                             }
                         }
                         .frame(maxHeight: .infinity)
@@ -127,6 +129,7 @@ extension ContentView {
         case profile     = "プロフィール"
         case registration = "登録"
         case masterRegistration = "マスター登録"
+        case search      = "商品検索"
         var id: String { rawValue }
     }
 }

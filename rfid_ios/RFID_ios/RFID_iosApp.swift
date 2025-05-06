@@ -11,7 +11,7 @@ import DENSOScannerSDK
 @main
 struct DensoScannerApp: App {
     @StateObject private var deps = AppDependencies()
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -20,8 +20,8 @@ struct DensoScannerApp: App {
                 .environmentObject(deps.compareManager)
                 .environmentObject(deps.itemRegistrationManager)
                 .environmentObject(deps.inventoryMasterManager)
+                .environmentObject(deps.itemSearchManager)
 
         }
     }
 }
-

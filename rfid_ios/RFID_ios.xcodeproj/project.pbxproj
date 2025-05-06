@@ -24,6 +24,8 @@
 		C52AB9BF2DC920AA00E553B7 /* ItemRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */; };
 		C52AB9C12DC9595F00E553B7 /* InventoryMasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9C02DC9595F00E553B7 /* InventoryMasterManager.swift */; };
 		C52AB9C32DC9597200E553B7 /* InventoryMasterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9C22DC9597200E553B7 /* InventoryMasterFormView.swift */; };
+		C52AB9C92DCA300E00E553B7 /* ItemSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9C82DCA300E00E553B7 /* ItemSearchManager.swift */; };
+		C52AB9CB2DCA302100E553B7 /* ItemSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52AB9CA2DCA302100E553B7 /* ItemSearchView.swift */; };
 		C5C248CA2DC7939000F0A94C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C248C92DC7939000F0A94C /* AppDependencies.swift */; };
 		C5C248D22DC7BBD100F0A94C /* DENSOScannerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; };
 		C5C248D32DC7BBD100F0A94C /* DENSOScannerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -88,6 +90,8 @@
 		C52AB9BE2DC920AA00E553B7 /* ItemRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationManager.swift; sourceTree = "<group>"; };
 		C52AB9C02DC9595F00E553B7 /* InventoryMasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryMasterManager.swift; sourceTree = "<group>"; };
 		C52AB9C22DC9597200E553B7 /* InventoryMasterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryMasterFormView.swift; sourceTree = "<group>"; };
+		C52AB9C82DCA300E00E553B7 /* ItemSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchManager.swift; sourceTree = "<group>"; };
+		C52AB9CA2DCA302100E553B7 /* ItemSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchView.swift; sourceTree = "<group>"; };
 		C5C248C92DC7939000F0A94C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		C5C248D12DC7BBD100F0A94C /* DENSOScannerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DENSOScannerSDK.framework; sourceTree = "<group>"; };
 		C5C248D62DC7D26500F0A94C /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				C52AB9B22DC90DEA00E553B7 /* AuthView.swift */,
 				C52AB9B42DC90E0700E553B7 /* ProfileView.swift */,
 				C52AB9B62DC90E1E00E553B7 /* Models.swift */,
+				C52AB9C82DCA300E00E553B7 /* ItemSearchManager.swift */,
+				C52AB9CA2DCA302100E553B7 /* ItemSearchView.swift */,
 				C52AB9B82DC90E7600E553B7 /* AvatarImage.swift */,
 				C5C2490A2DC8DD0C00F0A94C /* Extension */,
 				C5C248FF2DC8DCEC00F0A94C /* Sound */,
@@ -402,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52AB9C92DCA300E00E553B7 /* ItemSearchManager.swift in Sources */,
 				C52AB9BF2DC920AA00E553B7 /* ItemRegistrationManager.swift in Sources */,
 				C5C248D72DC7D26500F0A94C /* SettingManager.swift in Sources */,
 				C52AB9B52DC90E0700E553B7 /* ProfileView.swift in Sources */,
@@ -420,6 +427,7 @@
 				C52AB9C12DC9595F00E553B7 /* InventoryMasterManager.swift in Sources */,
 				C5C248D92DC7D43400F0A94C /* SettingView.swift in Sources */,
 				C5C248E32DC7DF4000F0A94C /* CompareMasterView.swift in Sources */,
+				C52AB9CB2DCA302100E553B7 /* ItemSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
