@@ -20,17 +20,17 @@ export const Sidebar = () => {
         <li>
           <Link
             href="/inventory/masters"
-            className="group flex items-center rounded-lg p-2 text-lg"
+            className="group flex items-center rounded-lg p-2 text-md"
           >
             在庫管理マスター
           </Link>
         </li>
         <li>
           <Link
-            href="#"
+            href="/inventory/items"
             className="group flex items-center rounded-lg p-2 text-lg"
           >
-            Explore
+            RFIDアイテム一覧
           </Link>
         </li>
         <li>

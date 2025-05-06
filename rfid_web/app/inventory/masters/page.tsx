@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Edit, Eye, Plus, Search } from "lucide-react";
 
-import { InventoryMaster } from "@/lib/db";
+import { InventoryMaster, Item } from "@/lib/db";
 import { getInventoryMasters } from "@/lib/db/inventory-master";
+import { getItems } from "@/lib/db/items";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
@@ -20,13 +21,26 @@ export default function InventoryMastersPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMasters, setFilteredMasters] = useState<InventoryMaster[]>([]);
+  const [itemCountMap, setItemCountMap] = useState<Record<string, number>>({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getInventoryMasters();
-        setInventoryMasters(data);
-        setFilteredMasters(data);
+        const [mastersData, itemsData] = await Promise.all([
+          getInventoryMasters(),
+          getItems(),
+        ]);
+
+        // マスターIDごとのアイテム数を計算
+        const countMap: Record<string, number> = {};
+        (itemsData as Item[]).forEach((item) => {
+          const id = item.inventory_master_id;
+          countMap[id] = (countMap[id] ?? 0) + 1;
+        });
+
+        setItemCountMap(countMap);
+        setInventoryMasters(mastersData);
+        setFilteredMasters(mastersData);
       } catch (error) {
         console.error("Error fetching inventory masters:", error);
       } finally {
@@ -104,6 +118,7 @@ export default function InventoryMastersPage() {
                 <th className="px-4 py-3 text-left font-medium">項目2</th>
                 <th className="px-4 py-3 text-left font-medium">項目3</th>
                 <th className="px-4 py-3 text-left font-medium">商品コード</th>
+                <th className="px-4 py-3 text-left font-medium">アイテム数</th>
                 <th className="px-4 py-3 text-left font-medium">画像</th>
                 <th className="px-4 py-3 text-left font-medium">業種</th>
                 <th className="px-4 py-3 text-left font-medium">作成日</th>
@@ -119,6 +134,7 @@ export default function InventoryMastersPage() {
                   </td>
                   <td className="px-4 py-3">{master.col_3 || "-"}</td>
                   <td className="px-4 py-3">{master.product_code || "-"}</td>
+                  <td className="px-4 py-3">{itemCountMap[master.id] ?? 0}</td>
                   <td className="px-4 py-3">
                     {master.product_image ? (
                       <div className="relative h-10 w-10 overflow-hidden rounded border">

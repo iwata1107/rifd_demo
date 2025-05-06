@@ -55,7 +55,7 @@ export function UserSignupForm({ className, ...props }: UserSignupFormProps) {
       });
     }
 
-    replace("/inventory");
+    replace("/inventory/masters");
   }
 
   return (

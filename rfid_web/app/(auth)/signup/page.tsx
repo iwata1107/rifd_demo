@@ -22,7 +22,7 @@ export default async function LoginPage() {
   const user = await getCurrentUser(supabase);
 
   if (user) {
-    redirect(`/inventory`);
+    redirect(`/inventory/masters`);
   }
 
   return (

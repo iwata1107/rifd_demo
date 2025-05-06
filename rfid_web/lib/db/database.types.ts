@@ -9,6 +9,49 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      items: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          rfid: string;
+          inventory_master_id: string;
+          user_id: string | null;
+          is_inventoried: boolean;
+        };
+        Insert: {
+          id?: string;
+          created_at?: string;
+          updated_at?: string;
+          rfid: string;
+          inventory_master_id: string;
+          user_id?: string | null;
+          is_inventoried?: boolean;
+        };
+        Update: {
+          id?: string;
+          created_at?: string;
+          updated_at?: string;
+          rfid?: string;
+          inventory_master_id?: string;
+          user_id?: string | null;
+          is_inventoried?: boolean;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "items_inventory_master_id_fkey";
+            columns: ["inventory_master_id"];
+            referencedRelation: "inventory_masters";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "items_user_id_fkey";
+            columns: ["user_id"];
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       inventory_masters: {
         Row: {
           id: string;

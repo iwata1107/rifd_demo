@@ -38,7 +38,10 @@ export default async function Home() {
                 >
                   <Play className="mr-2" size={16} /> Demo
                 </Link>
-                <Link href="/inventory" className={cn(buttonVariants())}>
+                <Link
+                  href="/inventory/masters"
+                  className={cn(buttonVariants())}
+                >
                   Get Started
                 </Link>
               </div>

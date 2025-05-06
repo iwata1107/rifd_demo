@@ -3,12 +3,11 @@ import { env } from "@/env.mjs";
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "AI Fusion Kit",
-  description:
-    "A feature-rich, highly customizable AI Chatbot Template, empowered by Next.js.",
+  name: "RFID DEMO",
+  description: "小売店の未来をつくる",
   links: {
-    x: "https://twitter.com/nphivu414",
-    github: "https://github.com/nphivu414/ai-fusion-kit",
+    x: "https://twitter.com/oho313",
+    github: "https://github.com/iwata1107",
     docs: "",
   },
 };

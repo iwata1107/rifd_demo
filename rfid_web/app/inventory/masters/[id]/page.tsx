@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getInventoryMasterById } from "@/lib/db/inventory-master";
+import { isValidUUID } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import FallbackImage from "@/components/ui/FallbackImage";
@@ -19,6 +20,12 @@ export const dynamic = "force-dynamic";
 export default async function InventoryMasterDetailPage({
   params,
 }: InventoryMasterDetailPageProps) {
+  // IDがUUID形式かどうかをチェック
+  if (!isValidUUID(params.id)) {
+    console.error(`Invalid UUID format: ${params.id}`);
+    notFound();
+  }
+
   try {
     console.log(params);
     const inventoryMaster = await getInventoryMasterById(params.id);

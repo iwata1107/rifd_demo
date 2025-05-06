@@ -33,9 +33,7 @@ export const NavigationBar = async () => {
           >
             <Menu />
           </label>
-          <div className="shrink-0 md:mr-6">
-            <AppLogo />
-          </div>
+
           <NavigationMainMenu />
         </div>
         <div>
