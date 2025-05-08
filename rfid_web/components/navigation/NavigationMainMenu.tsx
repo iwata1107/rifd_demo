@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Database, Printer, Tag } from "lucide-react";
+import { Database, Printer, ShoppingCart, Tag } from "lucide-react";
 
 import { buttonVariants } from "../ui/Button";
 import {
@@ -48,6 +48,18 @@ export const NavigationMainMenu = () => {
           >
             <Printer className="mr-1" size={16} />
             プリンター
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem asChild>
+          <Link
+            href="/ec"
+            className={buttonVariants({
+              variant: "ghost",
+              size: "sm",
+            })}
+          >
+            <ShoppingCart className="mr-1" size={16} />
+            ECサイト
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>

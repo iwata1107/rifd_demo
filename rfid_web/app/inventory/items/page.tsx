@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Eye, Filter, Search } from "lucide-react";
 
 import { InventoryMaster, Item } from "@/lib/db";
+import { Constants } from "@/lib/db/database.types";
 import { getItemsWithMasterInfo } from "@/lib/db/items";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -37,6 +38,17 @@ export default function ItemsPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredItems, setFilteredItems] = useState<ItemWithMaster[]>([]);
+  const [itemStats, setItemStats] = useState<{
+    total: number;
+    byTarget: Record<string, number>;
+    inventoried: number;
+    notInventoried: number;
+  }>({
+    total: 0,
+    byTarget: {},
+    inventoried: 0,
+    notInventoried: 0,
+  });
 
   // フィルターのデフォルト値は "all" とする（空文字列は Radix Select.Item で使用不可のため）
   const [targetFilter, setTargetFilter] = useState<string>("all");
@@ -47,6 +59,33 @@ export default function ItemsPage() {
     const fetchData = async () => {
       try {
         const data = await getItemsWithMasterInfo();
+
+        // 商品数の集計
+        const stats = {
+          total: data.length,
+          byTarget: {} as Record<string, number>,
+          inventoried: 0,
+          notInventoried: 0,
+        };
+
+        // 業種ごとの集計を初期化
+        Constants.public.Enums.target_type.forEach((target) => {
+          stats.byTarget[target] = 0;
+        });
+
+        // 集計処理
+        data.forEach((item) => {
+          const target = item.inventory_masters.target;
+          stats.byTarget[target] += 1;
+
+          if (item.is_inventoried) {
+            stats.inventoried += 1;
+          } else {
+            stats.notInventoried += 1;
+          }
+        });
+
+        setItemStats(stats);
         setItems(data);
         setFilteredItems(data);
       } catch (error) {
@@ -111,8 +150,12 @@ export default function ItemsPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6">
         <Heading2>RFIDアイテム一覧</Heading2>
+        <div className="text-sm text-muted-foreground mt-2">
+          総数: {itemStats.total} | 棚卸済: {itemStats.inventoried} | 未棚卸:{" "}
+          {itemStats.notInventoried}
+        </div>
       </div>
 
       <div className="mb-6 flex flex-col md:flex-row gap-4">
@@ -163,8 +206,8 @@ export default function ItemsPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">すべての状態</SelectItem>
-                    <SelectItem value="true">在庫済み</SelectItem>
-                    <SelectItem value="false">未在庫</SelectItem>
+                    <SelectItem value="true">棚卸済み</SelectItem>
+                    <SelectItem value="false">未棚卸</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -194,6 +237,7 @@ export default function ItemsPage() {
           <table className="w-full">
             <thead>
               <tr className="border-b bg-muted/50">
+                <th className="px-4 py-3 text-left font-medium w-12">#</th>
                 <th className="px-4 py-3 text-left font-medium">RFID</th>
                 <th className="px-4 py-3 text-left font-medium">商品名</th>
                 <th className="px-4 py-3 text-left font-medium">商品コード</th>
@@ -205,8 +249,11 @@ export default function ItemsPage() {
               </tr>
             </thead>
             <tbody>
-              {filteredItems.map((item) => (
+              {filteredItems.map((item, index) => (
                 <tr key={item.id} className="border-b">
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {index + 1}
+                  </td>
                   <td className="px-4 py-3 font-mono text-sm">{item.rfid}</td>
                   <td className="px-4 py-3">{item.inventory_masters.col_1}</td>
                   <td className="px-4 py-3">
@@ -244,7 +291,7 @@ export default function ItemsPage() {
                           : "bg-amber-100 text-amber-800"
                       }`}
                     >
-                      {item.is_inventoried ? "在庫済み" : "未在庫"}
+                      {item.is_inventoried ? "棚卸済み" : "未棚卸"}
                     </span>
                   </td>
                   <td className="px-4 py-3">

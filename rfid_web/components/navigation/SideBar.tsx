@@ -34,6 +34,14 @@ export const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link
+            href="/ec"
+            className="group flex items-center rounded-lg p-2 text-lg"
+          >
+            ECサイト
+          </Link>
+        </li>
+        <li>
           <a
             href={siteConfig.links.github}
             className="group flex items-center rounded-lg p-2 text-lg"

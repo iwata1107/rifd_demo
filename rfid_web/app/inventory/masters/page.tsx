@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Edit, Eye, Plus, Search } from "lucide-react";
 
 import { InventoryMaster, Item } from "@/lib/db";
+import { Constants } from "@/lib/db/database.types";
 import { getInventoryMasters } from "@/lib/db/inventory-master";
 import { getItems } from "@/lib/db/items";
 import { Button } from "@/components/ui/Button";
@@ -22,6 +23,9 @@ export default function InventoryMastersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMasters, setFilteredMasters] = useState<InventoryMaster[]>([]);
   const [itemCountMap, setItemCountMap] = useState<Record<string, number>>({});
+  const [targetStats, setTargetStats] = useState<
+    Record<string, { masterCount: number; itemCount: number }>
+  >({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +42,25 @@ export default function InventoryMastersPage() {
           countMap[id] = (countMap[id] ?? 0) + 1;
         });
 
+        // 業種ごとの統計情報を計算
+        const stats: Record<
+          string,
+          { masterCount: number; itemCount: number }
+        > = {};
+
+        // 初期化
+        Constants.public.Enums.target_type.forEach((target) => {
+          stats[target] = { masterCount: 0, itemCount: 0 };
+        });
+
+        // マスター数とアイテム数を集計
+        (mastersData as InventoryMaster[]).forEach((master) => {
+          const target = master.target;
+          stats[target].masterCount += 1;
+          stats[target].itemCount += countMap[master.id] ?? 0;
+        });
+
+        setTargetStats(stats);
         setItemCountMap(countMap);
         setInventoryMasters(mastersData);
         setFilteredMasters(mastersData);
@@ -78,6 +101,26 @@ export default function InventoryMastersPage() {
             新規登録
           </Button>
         </Link>
+      </div>
+
+      <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+        {Object.entries(targetStats).map(([target, stats]) => (
+          <Card key={target} className="p-4">
+            <div className="flex flex-col">
+              <h3 className="font-medium">{getTargetLabel(target)}</h3>
+              <div className="mt-2 flex justify-between">
+                <div>
+                  <p className="text-sm text-muted-foreground">マスター数</p>
+                  <p className="text-2xl font-bold">{stats.masterCount}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">商品数</p>
+                  <p className="text-2xl font-bold">{stats.itemCount}</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
 
       <div className="mb-6">

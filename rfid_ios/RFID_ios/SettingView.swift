@@ -39,6 +39,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.wheel)
                     .disabled(!settingManager.isConnected)
+
                 }
 
                 Section(header: Text("Scanner Info")) {

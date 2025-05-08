@@ -42,7 +42,7 @@ final class SettingManager: ObservableObject {
     @Published var selectedReadPower: Int = 30 {
         didSet {
             print("🟢 selectedReadPower 変更 → \(selectedReadPower)dBm")
-            updateReadPower()
+            _ = updateReadPower()
         }
     }
     // ↑ ここまで追加部分 ↑
@@ -113,6 +113,17 @@ final class SettingManager: ObservableObject {
         if result {
             _ = updateReadPower()
         }
+    }
+
+    /// 現在のパワーレベルをスキャナから再取得して UI へ反映
+    func fetchCurrentReadPower() {
+        loadCurrentReadPower()
+    }
+
+    /// Picker で選択したパワーレベルをスキャナへ保存
+    @discardableResult
+    func saveReadPower() -> Bool {
+        updateReadPower()
     }
 
     // MARK: - 内部処理 --------------------------------------------------------
@@ -214,8 +225,8 @@ final class SettingManager: ObservableObject {
             return
         }
         let currentSdkValue = Int(settings.scan.powerLevelRead)
-        let currentDbm      = currentSdkValue / 10  // SDK 単位 → dBm
-        print("🔸 取得したパワーレベル = \(currentSdkValue) (SDK単位) → \(currentDbm)dBm")
+        let currentDbm      = currentSdkValue // SDK は dBm そのまま返す
+        print("🔸 取得したパワーレベル = \(currentSdkValue)dBm")
         if readPowerRange.contains(currentDbm) {
             // プロパティ更新 (UI反映)。同値なら didSet は発火しない
             selectedReadPower = currentDbm
